@@ -15,7 +15,7 @@ function Tarea({id,tarea,terminada,eliminarTarea,actualizarEstado,actualizarText
                         onClick={ () => {
                            if(editando){
                                 if(textoTemporal.trim() != "" && textoTemporal.trim() != tarea){
-                                        return fetch("http://localhost:3000/tareas/actualizar/texto/" + id, {
+                                        return fetch("https://proyecto-completo-back.onrender.com/tareas/actualizar/texto/" + id, {
                                                 method : "PUT",
                                                 body : JSON.stringify({ tarea : textoTemporal.trim() }),
                                                 headers : {
@@ -43,7 +43,7 @@ function Tarea({id,tarea,terminada,eliminarTarea,actualizarEstado,actualizarText
                     >{ editando ? "guardar" : "editar" }</button>
                     <button className="boton"
                             onClick={ () => {
-                                fetch("http://localhost:3000/tareas/borrar/" + id, {
+                                fetch("https://proyecto-completo-back.onrender.com/tareas/borrar/" + id, {
                                         method : "DELETE"
                                 })
                                 .then(respuesta => respuesta.json())
@@ -57,7 +57,7 @@ function Tarea({id,tarea,terminada,eliminarTarea,actualizarEstado,actualizarText
                     >borrar</button>
                     <button className={ `estado ${terminada ? "terminada" : "" }` }
                             onClick={ () => {
-                                fetch("http://localhost:3000/tareas/actualizar/estado/" + id, {
+                                fetch("https://proyecto-completo-back.onrender.com/tareas/actualizar/estado/" + id, {
                                         method : "PUT"
                                 })
                                 .then(respuesta => respuesta.json())

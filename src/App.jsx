@@ -7,7 +7,7 @@ function App() {
   let [tareas,setTareas] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:3000/tareas")
+    fetch("https://proyecto-completo-back.onrender.com/tareas")
     .then(respuesta => respuesta.json())
     .then(tareas => setTareas(tareas))
   },[])

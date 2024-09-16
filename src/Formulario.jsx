@@ -8,7 +8,7 @@ function Formulario({nuevaTarea}){
                         evento.preventDefault()
 
                         if(textoTemporal.trim() != ""){
-                            fetch("http://localhost:3000/tareas/nueva", {
+                            fetch("https://proyecto-completo-back.onrender.com/tareas/nueva", {
                                 method : "POST",
                                 body : JSON.stringify({ tarea : textoTemporal }),
                                 headers : {
